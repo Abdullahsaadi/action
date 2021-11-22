@@ -2,7 +2,7 @@ name: Second Workflow
 
 on: push
 
-jobs: hhh
+jobs:
   first-job:
     name: check everything
     runs-on: ubuntu-18.04
