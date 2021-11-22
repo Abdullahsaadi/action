@@ -1,16 +1,18 @@
-name: First Workflow
+name: Workflow
 
 on: push
 
 jobs:
   first-job:
-    name: Say Hi 
+    name: abdullah 
     runs-on: ubuntu-18.04
     steps:
-    - name: Print a greeting
-      run: echo "Hi from your cool Workflow"
-    - name: Show ASCII greeting
-      uses: mscoutermarsh/ascii-art-action@master
-      with:
-        text: 'C H E L S E A'
+    - name: flake8
+      run: flake8 scrape_google.py--count--statistics--max-line-length 300
+    - name: mypy
+      uses: flake8 scrape_google.py--show-error-codes--disable-error-code import
+    - name: isort
+      uses: flake8 scrape_google.py-c--line-length 300
+      with: scrape_google.py
+
         
